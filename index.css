@@ -36,3 +36,21 @@
 #custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
     background-color: #888;
 }
+
+.item{
+    text-align: center;
+    width: auto;
+}
+
+.container{
+    margin: 10px;
+}
+
+.slider-size {
+height: 300px; /* This is your slider height */
+
+}
+.carousel {
+width:80%;
+margin:0 auto; /* center your carousel if other than 100% */ 
+}
