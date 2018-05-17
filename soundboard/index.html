@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class='no-js' lang='en'>
+  <!-- built with jm3's barebones sinatra template: * https://github.com/jm3/sinatra-template * -->
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <title>Ecksdee Soundboard</title>
+    <meta content='John Manoogian III (jm3)' name='author'>
+    <link href='images/favicon.ico' rel='shortcut icon'>
+    <link href='./stylesheets/app.css' media='all' rel='stylesheet'>
+    <script src='./js/vendor/modernizr-1.5.min.js'></script>
+
+    <!-- jQuery -->
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+    <script>
+      !window.jQuery && document.write('<script src="./js/vendor/jquery-1.4.2.min.js"><\/script>');
+    </script>
+    <script src='./js/vendor/plugins.js'></script>
+    <script src='./js/vendor/jquery-audivid.js'></script>
+    <script src='./js/app.js'></script>
+    
+    <!-- SoundManager2 -->
+    <script src="js/vendor/soundmanager2-jsmin.js"></script>
+    <script type="text/javascript" src="js/vendor/inlineplayer.js"></script>
+    <script>
+      soundManager.setup({
+        debugMode: false,
+        debugFlash:false,
+        wmode: transparent,
+        url: 'swf/',
+        onready: function() {
+          var introSound = soundManager.createSound({
+            id: 'introSound',
+            url: 'sounds/bmt/bmt-fx-02.mp3'
+          });
+          introSound.play();
+        },
+        ontimeout: function() {
+          // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
+        }
+      });
+    </script>
+
+
+    <!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
+    <!--[if IE 7 ]> <body class="ie7"> <![endif]-->
+    <!--[if IE 8 ]> <body class="ie8"> <![endif]-->
+    <!--[if IE 9 ]> <body class="ie9"> <![endif]-->
+    <!--[if (gt IE 9)|!(IE)]> ><! <![endif]-->
+  </head>
+  <body>
+    <!-- <![endif] -->
+    <div id='container'>
+      <header></header>
+      <div id='main'>
+        <div id='top-bar'>
+          <a href="index.html"></a>
+        </div>
+        <div id='audio' style='display: none;'></div>
+        <div id='buttons'>
+          <div id='pic'></div>
+          <a href="sounds/maiscream.mp3">Mai Scream 1</a>
+          <a href="sounds/IDW_GAIN_JP.ogg">IDW DA NYAA</a>
+        </div>
+        <div id='bottom-bar'>
+          <a href='http://jm3.net/' title='John Manoogian III' target='_blank'>
+            Credit to jm3
+          </a>
+          <a href='https://github.com/tsitu/Trick2g-Soundboard' title='GitHub' target='_blank'>
+            Source code
+          </a>
+          <footer></footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
